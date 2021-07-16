@@ -1,6 +1,6 @@
 {
   "name": "fetch-cached-dns",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Forked from @vercel/fetch-cached-dns",
   "license": "MIT",
   "files": [
@@ -16,7 +16,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vercel/fetch-cached-dns.git"
+    "url": "git+https://github.com/lamhieu-vk/fetch-cached-dns.git"
   },
   "author": "Nathan Rajlich <nate@vercel.com>",
   "pre-commit": "lint:staged",
@@ -31,9 +31,9 @@
     "extends": "@zeit/eslint-config-node"
   },
   "bugs": {
-    "url": "https://github.com/vercel/fetch-cached-dns/issues"
+    "url": "https://github.com/lamhieu-vk/fetch-cached-dns/issues"
   },
-  "homepage": "https://github.com/vercel/fetch-cached-dns#readme",
+  "homepage": "https://github.com/lamhieu-vk/fetch-cached-dns#readme",
   "peerDependencies": {
     "node-fetch": "*"
   },
