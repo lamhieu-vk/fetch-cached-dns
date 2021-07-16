@@ -5,7 +5,7 @@ const { dnsCachedUrl } = require('./util')
 
 module.exports = setup
 
-const isRedirect = v => ((v / 100) | 0) === 3
+const isRedirect = v => ((v / 100) | 0) === 3 && v !== 304
 
 function setup(fetch) {
   if (!fetch) {
