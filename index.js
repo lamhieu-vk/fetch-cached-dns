@@ -58,18 +58,21 @@ function setup(fetch) {
       // Set the proper `Host` request header, considering that node-fetch will
       // absolutize a relative redirect URL, so the IP address needs to be
       // replaced with the original hostname as well.
-      const location = res.headers.get('Location')
-      const parsedLocation = parse(location)
-      if (parsedLocation.host === parsed.host) {
-        parsedLocation.host = originalHost
-      }
-      redirectOpts.headers.set('Host', parsedLocation.host)
+      if (res.headers.has('Location')) {
+        const location = res.headers.get('Location')
+        const parsedLocation = parse(location)
+        if (parsedLocation.host === parsed.host) {
+          parsedLocation.host = originalHost
+        }
 
-      if (opts.onRedirect) {
-        opts.onRedirect(res, redirectOpts)
-      }
+        redirectOpts.headers.set('Host', parsedLocation.host)
 
-      return fetchCachedDns(format(parsedLocation), redirectOpts)
+        if (opts.onRedirect) {
+          opts.onRedirect(res, redirectOpts)
+        }
+
+        return fetchCachedDns(format(parsedLocation), redirectOpts)
+      }
     }
     return res
   }
